@@ -3,6 +3,7 @@ package br.com.facildespensa.apirest.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "TB_LISTA_DE_COMPRA")
@@ -24,13 +25,13 @@ public class ListaDeCompra implements Serializable {
     @Column(name = "VALOR_TOTAL")
     private double valorTotal;
 
-    @OneToMany
-    @JoinColumn(name = "TB_DESPENSA", referencedColumnName = "ID")
-    private long idDespensa;
+    @OneToOne
+    @JoinColumn(name = "ID_DESPENSA")
+    private Despensa despensa;
 
     @OneToMany
-    @JoinColumn(name = "TB_ITEM", referencedColumnName = "ID")
-    private long idItem;
+    @JoinColumn(name = "ID")
+    private List<Item> itens;
 
     public long getId() {
         return id;
@@ -72,19 +73,19 @@ public class ListaDeCompra implements Serializable {
         this.valorTotal = valorTotal;
     }
 
-    public long getIdDespensa() {
-        return idDespensa;
+    public Despensa getDespensa() {
+        return despensa;
     }
 
-    public void setIdDespensa(long idDespensa) {
-        this.idDespensa = idDespensa;
+    public void setDespensa(Despensa despensa) {
+        this.despensa = despensa;
     }
 
-    public long getIdItem() {
-        return idItem;
+    public List<Item> getItens() {
+        return itens;
     }
 
-    public void setIdItem(long idItem) {
-        this.idItem = idItem;
+    public void setItens(List<Item> itens) {
+        this.itens = itens;
     }
 }

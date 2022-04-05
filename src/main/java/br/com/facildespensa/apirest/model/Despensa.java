@@ -2,6 +2,7 @@ package br.com.facildespensa.apirest.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="TB_DESPENSA")
@@ -17,13 +18,18 @@ public class Despensa implements Serializable {
     @Column(name = "NOME")
     private String nome;
 
-    @ManyToOne
-    @JoinColumn(name = "TB_USUARIO", referencedColumnName = "ID")
-    private long idUsuario;
+    @OneToOne
+    @JoinColumn(name = "ID_USUARIO")
+    private Usuario usuario;
+
+    @OneToMany
+    @JoinColumn(name = "ID")
+    private List<Item> itens;
 
     public long getId() {
         return id;
     }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -36,11 +42,19 @@ public class Despensa implements Serializable {
         this.nome = nome;
     }
 
-    public long getIdUsuario() {
-        return idUsuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setIdUsuario(long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public List<Item> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<Item> itens) {
+        this.itens = itens;
     }
 }

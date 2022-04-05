@@ -1,11 +1,11 @@
 package br.com.facildespensa.apirest.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
+@Entity
+@Table(name = "TB_USUARIO")
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -25,6 +25,10 @@ public class Usuario implements Serializable {
     private String email;
     @Column(name = "SENHA")
     private String senha;
+
+    @OneToMany
+    @JoinColumn(name = "ID")
+    private List<Despensa> despensas;
 
     public long getId() {
         return id;
@@ -72,5 +76,13 @@ public class Usuario implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public List<Despensa> getDespensas() {
+        return despensas;
+    }
+
+    public void setDespensas(List<Despensa> despensas) {
+        this.despensas = despensas;
     }
 }
