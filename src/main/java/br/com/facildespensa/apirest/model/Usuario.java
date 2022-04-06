@@ -1,5 +1,7 @@
 package br.com.facildespensa.apirest.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -26,8 +28,8 @@ public class Usuario implements Serializable {
     @Column(name = "SENHA")
     private String senha;
 
-    @OneToMany
-    @JoinColumn(name = "ID")
+    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "usuario")
+    @JsonManagedReference
     private List<Despensa> despensas;
 
     public long getId() {

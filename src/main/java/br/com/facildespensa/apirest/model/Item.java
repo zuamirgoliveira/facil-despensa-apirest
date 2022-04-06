@@ -2,6 +2,7 @@ package br.com.facildespensa.apirest.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "TB_ITEM")
@@ -24,13 +25,12 @@ public class Item implements Serializable {
     private double valor;
     @Column(name = "ITEM_PADRAO")
     private int itemPadrao;
-
-    @OneToOne
-    @JoinColumn(name = "ID_DESPENSA")
-    private Despensa despensa;
-
-    @OneToOne
-    @JoinColumn(name = "ID_LISTA_DE_COMPRA")
-    private ListaDeCompra listaDeCompra;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "ID_DESPENSA")
+//    private Despensa despensa;
+//
+//    @OneToMany(mappedBy = "item")
+//    private List<ListaDeCompra> listasDeCompras;
 
 }

@@ -25,13 +25,13 @@ public class ListaDeCompra implements Serializable {
     @Column(name = "VALOR_TOTAL")
     private double valorTotal;
 
-    @OneToOne
-    @JoinColumn(name = "ID_DESPENSA")
-    private Despensa despensa;
-
-    @OneToMany
-    @JoinColumn(name = "ID")
-    private List<Item> itens;
+//    @OneToOne
+//    @JoinColumn(name = "ID_DESPENSA")
+//    private Despensa despensa;
+//
+//    @OneToMany
+//    @JoinColumn(name = "ID")
+//    private List<Item> itens;
 
     public long getId() {
         return id;
@@ -73,19 +73,4 @@ public class ListaDeCompra implements Serializable {
         this.valorTotal = valorTotal;
     }
 
-    public Despensa getDespensa() {
-        return despensa;
-    }
-
-    public void setDespensa(Despensa despensa) {
-        this.despensa = despensa;
-    }
-
-    public List<Item> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<Item> itens) {
-        this.itens = itens;
-    }
 }

@@ -1,5 +1,7 @@
 package br.com.facildespensa.apirest.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -18,13 +20,13 @@ public class Despensa implements Serializable {
     @Column(name = "NOME")
     private String nome;
 
-    @OneToOne
-    @JoinColumn(name = "ID_USUARIO")
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "ID_USUARIO", nullable = false)
+    @JsonBackReference
     private Usuario usuario;
 
-    @OneToMany
-    @JoinColumn(name = "ID")
-    private List<Item> itens;
+//    @OneToMany(mappedBy = "TB_DESPENSA")
+//    private List<Item> itens;
 
     public long getId() {
         return id;
@@ -50,11 +52,4 @@ public class Despensa implements Serializable {
         this.usuario = usuario;
     }
 
-    public List<Item> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<Item> itens) {
-        this.itens = itens;
-    }
 }
