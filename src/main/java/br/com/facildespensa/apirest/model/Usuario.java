@@ -87,4 +87,5 @@ public class Usuario implements Serializable {
     public void setDespensas(List<Despensa> despensas) {
         this.despensas = despensas;
     }
+
 }
