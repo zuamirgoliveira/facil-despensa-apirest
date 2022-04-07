@@ -1,5 +1,8 @@
 package br.com.facildespensa.apirest.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -25,13 +28,18 @@ public class ListaDeCompra implements Serializable {
     @Column(name = "VALOR_TOTAL")
     private double valorTotal;
 
-    @OneToOne
-    @JoinColumn(name = "ID_DESPENSA")
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "ID_DESPENSA", nullable = false)
+    @JsonBackReference
     private Despensa despensa;
 
-    @OneToMany
-    @JoinColumn(name = "ID")
+    @ManyToMany(mappedBy = "listasDeCompra")
+    @JsonManagedReference
     private List<Item> itens;
+
+    public Despensa getDespensa() {
+        return despensa;
+    }
 
     public long getId() {
         return id;
@@ -71,10 +79,6 @@ public class ListaDeCompra implements Serializable {
 
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
-    }
-
-    public Despensa getDespensa() {
-        return despensa;
     }
 
     public void setDespensa(Despensa despensa) {
