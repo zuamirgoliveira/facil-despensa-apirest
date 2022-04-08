@@ -39,7 +39,7 @@ O usuário deverá ter código, nome, sobrenome, número de telefone e e-mail.
 
  
 # Modelo relacional do banco de dados
-[Modelo relacional do banco de dados](https://trello.com/1/cards/6246592e46807539fab7fa25/attachments/624f85678358c6471a1a95b9/download/Modelo_relacional_F%C3%A1cil_Despensa.png)
+![Modelo relacional do banco de dados](https://trello.com/1/cards/6246592e46807539fab7fa25/attachments/624f85678358c6471a1a95b9/download/Modelo_relacional_F%C3%A1cil_Despensa.png)
 
 
 
