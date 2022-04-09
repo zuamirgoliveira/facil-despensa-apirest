@@ -47,5 +47,11 @@ O usuário deverá ter código, nome, sobrenome, número de telefone e e-mail.
 [Trello](https://trello.com/b/qYQ56BPS/f%C3%A1cil-despensa)
 
  
- 
-
+# Bibliografia
+ 
+ ### Vídeos
+ 	- [Michelli Brito - API REST - SPRING BOOT](https://www.youtube.com/playlist?list=PL8iIphQOyG-D2FP9wkg12AavzmVRWEcnJ)
+ 
+ ### Livros
+ 	- Desenvolvimento Ágil Limpo: de volta às origens - Robert C. Martin (“Uncle Bob”)
+ 	- Tdd - Test Driven Development na Pratica - Camilo Lopes
