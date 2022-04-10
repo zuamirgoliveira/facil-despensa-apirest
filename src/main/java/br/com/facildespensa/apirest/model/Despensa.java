@@ -23,7 +23,7 @@ public class Despensa implements Serializable {
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_USUARIO", nullable = false)
-    @JsonManagedReference
+    @JsonBackReference
     private Usuario usuario;
 
     public long getId() {
