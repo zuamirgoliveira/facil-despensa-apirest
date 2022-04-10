@@ -19,22 +19,33 @@ public class UsuarioController {
     UsuarioRepository usuarioRepository;
 
     @GetMapping(value = "/usuarios")
-    @ApiOperation(value = "Retorna uma lista de usuários")
+    @ApiOperation(value = "Retornar uma lista de usuários")
     public List<Usuario> listarUsuarios() {
         List<Usuario> usuarios = usuarioRepository.findAll();
         return usuarios;
     }
 
     @GetMapping(value = "/usuarios/{id}")
-    @ApiOperation(value = "Retorna o usuário pelo id")
+    @ApiOperation(value = "Retornar um usuário pelo id")
     public Usuario listarUsuarioPorId(@PathVariable(value = "id") long id) {
         return usuarioRepository.findById(id);
     }
 
     @PostMapping(value = "/usuarios/salvar")
-    @ApiOperation(value = "Salvar usuário")
+    @ApiOperation(value = "Criar um usuário")
     public Usuario salvarUsuario(@RequestBody Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
 
+    @DeleteMapping(value = "/usuarios/deletar")
+    @ApiOperation(value = "Deletar um usuário")
+    public void deletarUsuario(@RequestBody Usuario usuario) {
+        usuarioRepository.delete(usuario);
+    }
+
+    @PutMapping(value = "/usuarios/atualizar")
+    @ApiOperation(value = "Atualizar um usuário")
+    public void atualizarUsuario(@RequestBody Usuario usuario) {
+        usuarioRepository.save(usuario);
+    }
 }
