@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface DespensaRepository extends JpaRepository<Despensa, Long> {
 
+    List<Despensa> findByUsuarioId(long idUsuario);
+
 }
