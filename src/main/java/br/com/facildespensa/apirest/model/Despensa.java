@@ -23,16 +23,8 @@ public class Despensa implements Serializable {
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_USUARIO", nullable = false)
-    @JsonBackReference
+    @JsonManagedReference
     private Usuario usuario;
-
-    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "despensa")
-    @JsonManagedReference
-    private List<Item> itens;
-
-    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "despensa")
-    @JsonManagedReference
-    private List<ListaDeCompra> listasDeCompra;
 
     public long getId() {
         return id;
@@ -58,19 +50,4 @@ public class Despensa implements Serializable {
         this.usuario = usuario;
     }
 
-    public List<Item> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<Item> itens) {
-        this.itens = itens;
-    }
-
-    public List<ListaDeCompra> getListasDeCompra() {
-        return listasDeCompra;
-    }
-
-    public void setListasDeCompra(List<ListaDeCompra> listasDeCompra) {
-        this.listasDeCompra = listasDeCompra;
-    }
 }
