@@ -48,9 +48,12 @@ O usuário deverá ter código, nome, sobrenome, número de telefone e e-mail.
 
  
 # Bibliografia
+
+ ### Artigos
+ [Padrões de projeto: o que são e o que resolvem - Kennedy Tedesco, treinaweb](https://www.treinaweb.com.br/blog/padroes-de-projeto-o-que-sao-e-o-que-resolvem)
  
  ### Vídeos
- 	- [Michelli Brito - API REST - SPRING BOOT](https://www.youtube.com/playlist?list=PL8iIphQOyG-D2FP9wkg12AavzmVRWEcnJ)
+ [API REST com SPRING BOOT - Michelli Brito](https://www.youtube.com/playlist?list=PL8iIphQOyG-D2FP9wkg12AavzmVRWEcnJ)
  
  ### Livros
  	- Desenvolvimento Ágil Limpo: de volta às origens - Robert C. Martin (“Uncle Bob”)
