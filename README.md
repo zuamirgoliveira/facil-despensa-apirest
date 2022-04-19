@@ -54,6 +54,7 @@ O usuário deverá ter código, nome, sobrenome, número de telefone e e-mail.
  
  ### Vídeos
  [API REST com SPRING BOOT - Michelli Brito](https://www.youtube.com/playlist?list=PL8iIphQOyG-D2FP9wkg12AavzmVRWEcnJ)
+ [Uncle Bob SOLID principles](https://www.youtube.com/watch?v=zHiWqnTWsn4)
  
  ### Livros
  	- Desenvolvimento Ágil Limpo: de volta às origens - Robert C. Martin (“Uncle Bob”)
