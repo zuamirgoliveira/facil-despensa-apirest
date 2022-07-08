@@ -25,7 +25,7 @@ public class DespensaController {
     }
 
     @PostMapping(value = "usuarios/despensas/salvar")
-    @ApiOperation(value = "Criar um usuário")
+    @ApiOperation(value = "Criar uma despensa")
     public Despensa salvarDespensa(@RequestBody Despensa despensa    ) {
         return despensaRepository.save(despensa);
     }

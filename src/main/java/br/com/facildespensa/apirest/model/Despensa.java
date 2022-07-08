@@ -21,7 +21,7 @@ public class Despensa implements Serializable {
     @Column(name = "NOME")
     private String nome;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_USUARIO", nullable = false)
     @JsonBackReference
     private Usuario usuario;

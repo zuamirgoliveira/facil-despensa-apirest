@@ -1,5 +1,6 @@
 package br.com.facildespensa.apirest.controller;
 
+import br.com.facildespensa.apirest.model.Despensa;
 import br.com.facildespensa.apirest.model.Usuario;
 import br.com.facildespensa.apirest.repository.UsuarioRepository;
 import io.swagger.annotations.Api;
@@ -7,6 +8,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
